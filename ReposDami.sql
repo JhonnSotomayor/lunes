@@ -68,15 +68,15 @@ GO
 	DROP TABLE IF EXISTS CLIENTE;
 CREATE TABLE CLIENTE (
     IDCLI int IDENTITY(1,1) NOT NULL,
-    NOMCLI varchar(50)  CHECK(LEN (NOMCLI) >= 3   AND NOMCLI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-    APEPATCLI varchar(50)  CHECK(LEN (APEPATCLI) >= 3   AND APEPATCLI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-    APEMATCLI varchar(50)  CHECK(LEN (APEMATCLI) >= 3   AND APEMATCLI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-    DNICLI char(8)  UNIQUE CHECK(LEN (DNICLI) = 8   AND DNICLI LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 8 CARACTERES OBLIGATORIOS
-    EMACLI varchar(50)  UNIQUE CHECK(EMACLI LIKE '%@%._%'), -- VALIDACIÒN DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
+    NOMCLI varchar(50)  CHECK(LEN (NOMCLI) >= 3   AND NOMCLI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    APEPATCLI varchar(50)  CHECK(LEN (APEPATCLI) >= 3   AND APEPATCLI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    APEMATCLI varchar(50)  CHECK(LEN (APEMATCLI) >= 3   AND APEMATCLI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    DNICLI char(8)  UNIQUE CHECK(LEN (DNICLI) = 8   AND DNICLI LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 8 CARACTERES OBLIGATORIOS
+    EMACLI varchar(50)  UNIQUE CHECK(EMACLI LIKE '%@%._%'), -- VALIDACIÃ’N DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
     CELCLI char(9)UNIQUE CHECK(CELCLI LIKE '%[9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]%'),--VALIDACION PRIMER NUMERO DEBE SER 9 Y SOLO NUMEROS
-    DOMCLI varchar(50)  CHECK(LEN (DOMCLI) >= 3   AND DOMCLI LIKE '%[a-zA-z ]%'),  --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 6 CARACTERES OBLIGATORIOS
-    ESTCLI char(1) DEFAULT 'A' CHECK(ESTCLI='A' OR ESTCLI='I'), -- VALIDACIÒN DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
+    DOMCLI varchar(50)  CHECK(LEN (DOMCLI) >= 3   AND DOMCLI LIKE '%[a-zA-z ]%'),  --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 6 CARACTERES OBLIGATORIOS
+    ESTCLI char(1) DEFAULT 'A' CHECK(ESTCLI='A' OR ESTCLI='I'), -- VALIDACIÃ’N DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
     CONSTRAINT IDCLI_pk PRIMARY KEY (IDCLI)
 );
 GO
@@ -86,11 +86,11 @@ GO
 	DROP TABLE IF EXISTS PRODUCTO ;
 CREATE TABLE PRODUCTO (
     IDPRO int IDENTITY(1,1) NOT NULL,
-    NOMPRO varchar(100)  UNIQUE CHECK(LEN (NOMPRO) >= 3   AND NOMPRO LIKE '%[a-zA-z 0-9/]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-    DESCPRO varchar(100)  CHECK(LEN (DESCPRO) >= 3   AND DESCPRO LIKE '%[a-zA-z 0-9/]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    NOMPRO varchar(100)  UNIQUE CHECK(LEN (NOMPRO) >= 3   AND NOMPRO LIKE '%[a-zA-z 0-9/]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    DESCPRO varchar(100)  CHECK(LEN (DESCPRO) >= 3   AND DESCPRO LIKE '%[a-zA-z 0-9/]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
     PREPRO	 decimal(8,2)  NOT NULL,
     STOCKPRO int  NOT NULL,
-    ESTPRO char(1)  DEFAULT 'A' CHECK(ESTPRO='A' OR ESTPRO='I'), -- VALIDACIÒN DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
+    ESTPRO char(1)  DEFAULT 'A' CHECK(ESTPRO='A' OR ESTPRO='I'), -- VALIDACIÃ’N DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
     CONSTRAINT IDPRO_PK PRIMARY KEY (IDPRO)
 );
 GO
@@ -100,10 +100,10 @@ GO
 -- Table: UBIGEO
 	DROP TABLE IF EXISTS UBIGEO ;
 CREATE TABLE UBIGEO (
-    CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9]%'), --VALIDACIÓN DE QUE SEAN 6 CARACTERES OBLIGATORIOS
-    DEPUBI varchar(50) CHECK(LEN (DEPUBI) >= 3   AND DEPUBI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	PROUBI varchar(50) CHECK(LEN (PROUBI) >= 3   AND PROUBI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	DISUBI varchar(50) CHECK(LEN (DISUBI) >= 3   AND DISUBI LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9]%'), --VALIDACIÃ“N DE QUE SEAN 6 CARACTERES OBLIGATORIOS
+    DEPUBI varchar(50) CHECK(LEN (DEPUBI) >= 3   AND DEPUBI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	PROUBI varchar(50) CHECK(LEN (PROUBI) >= 3   AND PROUBI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	DISUBI varchar(50) CHECK(LEN (DISUBI) >= 3   AND DISUBI LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
     CONSTRAINT CODUBI_pk PRIMARY KEY (CODUBI)
 );
 GO
@@ -112,14 +112,14 @@ GO
 	DROP TABLE IF EXISTS USUARIO ;
 CREATE TABLE USUARIO (
     IDUSU int IDENTITY(1,1) NOT NULL,
-    NOMUSU varchar(50)  CHECK(LEN (NOMUSU) >= 3   AND NOMUSU LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-    APEUSU varchar(50)  CHECK(LEN (APEUSU) >= 3   AND APEUSU LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    NOMUSU varchar(50)  CHECK(LEN (NOMUSU) >= 3   AND NOMUSU LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+    APEUSU varchar(50)  CHECK(LEN (APEUSU) >= 3   AND APEUSU LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
     CELUSU char(9)  UNIQUE CHECK(CELUSU LIKE '%[9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]%'),--VALIDACION PRIMER NUMERO DEBE SER 9 Y SOLO NUMEROS
-	DNIUSU char(8) UNIQUE CHECK(LEN (DNIUSU) = 8   AND DNIUSU LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 8 CARACTERES OBLIGATORIOS
-	EMAUSU varchar(50) UNIQUE CHECK(EMAUSU LIKE '%@%._%'), -- VALIDACIÒN DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
-	DOMUSU varchar(50) CHECK(LEN (DOMUSU) >= 3   AND DOMUSU LIKE '%[a-zA-z ]%'),  --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 6 CARACTERES OBLIGATORIOS
-	ESTUSU char(1) DEFAULT 'A' CHECK(ESTUSU='A' OR ESTUSU='I'), -- VALIDACIÒN DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
+	DNIUSU char(8) UNIQUE CHECK(LEN (DNIUSU) = 8   AND DNIUSU LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 8 CARACTERES OBLIGATORIOS
+	EMAUSU varchar(50) UNIQUE CHECK(EMAUSU LIKE '%@%._%'), -- VALIDACIÃ’N DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
+	DOMUSU varchar(50) CHECK(LEN (DOMUSU) >= 3   AND DOMUSU LIKE '%[a-zA-z ]%'),  --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 6 CARACTERES OBLIGATORIOS
+	ESTUSU char(1) DEFAULT 'A' CHECK(ESTUSU='A' OR ESTUSU='I'), -- VALIDACIÃ’N DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
     CONSTRAINT IDUSU_PK PRIMARY KEY (IDUSU)
 );
 GO
@@ -130,13 +130,13 @@ select * from USUARIO
 	DROP TABLE IF EXISTS PROVEEDOR ;			
 CREATE TABLE PROVEEDOR (
     IDPROV int IDENTITY(1,1) NOT NULL,
-	RUCPROV char(10) UNIQUE CHECK(LEN (RUCPROV) = 10   AND RUCPROV LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 10 CARACTERES OBLIGATORIOS
-    RAZSOPROV varchar(50)  CHECK(LEN (RAZSOPROV) >= 3   AND RAZSOPROV LIKE '%[a-zA-z ]%'), --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	EMAPROV varchar(50) UNIQUE CHECK(EMAPROV LIKE '%@%._%'), -- VALIDACIÒN DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
+	RUCPROV char(10) UNIQUE CHECK(LEN (RUCPROV) = 10   AND RUCPROV LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 10 CARACTERES OBLIGATORIOS
+    RAZSOPROV varchar(50)  CHECK(LEN (RAZSOPROV) >= 3   AND RAZSOPROV LIKE '%[a-zA-z ]%'), --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	EMAPROV varchar(50) UNIQUE CHECK(EMAPROV LIKE '%@%._%'), -- VALIDACIÃ’N DE QUE EL CORREO TENGA EL FORMATO "GMAIL.COM"
     CELPROV char(9)  UNIQUE CHECK(CELPROV LIKE '%[9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]%'),--VALIDACION PRIMER NUMERO DEBE SER 9 Y SOLO NUMEROS
-	DIRPROV varchar(50) CHECK(LEN (DIRPROV) >= 3   AND DIRPROV LIKE '%[a-zA-z ]%'),  --VALIDACIÓN DE QUE MINIMO SE ESCRIBA 3 CARACTERES
-	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÓN DE QUE SEAN 6 CARACTERES OBLIGATORIOS
-	ESTPROV char(1) DEFAULT 'A' CHECK(ESTPROV='A' OR ESTPROV='I'), -- VALIDACIÒN DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
+	DIRPROV varchar(50) CHECK(LEN (DIRPROV) >= 3   AND DIRPROV LIKE '%[a-zA-z ]%'),  --VALIDACIÃ“N DE QUE MINIMO SE ESCRIBA 3 CARACTERES
+	CODUBI char(6) CHECK(LEN (CODUBI) = 6   AND CODUBI LIKE '%[0-9%]'), --VALIDACIÃ“N DE QUE SEAN 6 CARACTERES OBLIGATORIOS
+	ESTPROV char(1) DEFAULT 'A' CHECK(ESTPROV='A' OR ESTPROV='I'), -- VALIDACIÃ’N DE QUE SOLO PERMITA "A" de activos o "I" de inactivos
     CONSTRAINT IDPROV_PK PRIMARY KEY (IDPROV)
 );
 GO
@@ -212,22 +212,22 @@ GO
 INSERT INTO UBIGEO
 (CODUBI, DEPUBI, PROUBI, DISUBI)
 VALUES
-('150501','LIMA','CAÑETE','SAN VICENTE'),
-('150502','LIMA','CAÑETE','ASIA'),
-('150503','LIMA','CAÑETE','CALANGO'),
-('150504','LIMA','CAÑETE','CERRO AZUL'),
-('150505','LIMA','CAÑETE','CHILCA'),
-('150506','LIMA','CAÑETE','COAYLLO'),
-('150507','LIMA','CAÑETE','IMPERIAL'),
-('150508','LIMA','CAÑETE','LUNAHUANA'),
-('150509','LIMA','CAÑETE','MALA'),
-('150510','LIMA','CAÑETE','NUEVO IMPERIAL'),
-('150511','LIMA','CAÑETE','PACARAN'),
-('150512','LIMA','CAÑETE','QUILMANA'),
-('150513','LIMA','CAÑETE','SAN ANTONIO'),
-('150514','LIMA','CAÑETE','SAN LUIS'),
-('150515','LIMA','CAÑETE','SANTA CRUZ DE FLORES'),
-('150516','LIMA','CAÑETE','ZUÑIGA');
+('150501','LIMA','CAÃ‘ETE','SAN VICENTE'),
+('150502','LIMA','CAÃ‘ETE','ASIA'),
+('150503','LIMA','CAÃ‘ETE','CALANGO'),
+('150504','LIMA','CAÃ‘ETE','CERRO AZUL'),
+('150505','LIMA','CAÃ‘ETE','CHILCA'),
+('150506','LIMA','CAÃ‘ETE','COAYLLO'),
+('150507','LIMA','CAÃ‘ETE','IMPERIAL'),
+('150508','LIMA','CAÃ‘ETE','LUNAHUANA'),
+('150509','LIMA','CAÃ‘ETE','MALA'),
+('150510','LIMA','CAÃ‘ETE','NUEVO IMPERIAL'),
+('150511','LIMA','CAÃ‘ETE','PACARAN'),
+('150512','LIMA','CAÃ‘ETE','QUILMANA'),
+('150513','LIMA','CAÃ‘ETE','SAN ANTONIO'),
+('150514','LIMA','CAÃ‘ETE','SAN LUIS'),
+('150515','LIMA','CAÃ‘ETE','SANTA CRUZ DE FLORES'),
+('150516','LIMA','CAÃ‘ETE','ZUÃ‘IGA');
 GO
 
 -- Listar registro de UBIGEO
@@ -245,16 +245,16 @@ VALUES
 ('Eduardo','Ruiz', 'Villa', '15266739', 'eduardo@gmail.com', '924856021', 'Malvinas', '150506', 'A'),
 ('Juan','Sanches','Flores', '15738410', 'juan@hotmail.com', '912485039', '28 de Julio', '150506', 'A'),
 ('Luis','Fernandez','Cubillas', '71284509', 'luis@gmail.com', '923567489', 'Sucre', '150506', 'A'),
-('Pedro','Ordoñez','Huaman', '16473980', 'pedro@hotmail.com', '915473976', '13 de Noviembre', '150506', 'A'),
+('Pedro','OrdoÃ±ez','Huaman', '16473980', 'pedro@hotmail.com', '915473976', '13 de Noviembre', '150506', 'A'),
 ('Esmeralda','Canales','Rojas', '71849029', 'esmeralda@hotmail.com', '926489187', 'Santa Rosa', '150501', 'A'),
 ('Cecilio','Sanchez','Lara', '72839024', 'cecilio@gmail.com', '934827156', 'Las Palmas', '150501', 'A'),
 ('Mario','Sanchez','Alcala', '14780924', 'mario@gmail.com', '932984563', '2 de Mayo', '150506', 'A'),
 ('Cristhian','Suarez', 'Frances','15238976', 'cristhian@hotmail.com', '965374821', 'Caltopilla', '150507', 'A'),
-('Gustavo','Ormeño', 'Perales','71256309', 'gustavo@gmail.com', '952839812', 'Ramos Larrea', '150506', 'A'),
-('Jose','Rivas','Escribá', '71839273', 'jose.ignacio@hotmail.com', '923519649', '13 de Noviembre', '150506', 'A'),
+('Gustavo','OrmeÃ±o', 'Perales','71256309', 'gustavo@gmail.com', '952839812', 'Ramos Larrea', '150506', 'A'),
+('Jose','Rivas','EscribÃ¡', '71839273', 'jose.ignacio@hotmail.com', '923519649', '13 de Noviembre', '150506', 'A'),
 ('Valerio','Santiago','Garcia', '72735095', 'valerio.santiago@hotmail.com', '913354032', 'Santa Rosa', '150501', 'A'),
-('Teodoro','Velázquez','Caballero', '72585674', 'teodoro.velazquez@gmail.com', '914739273', 'Las Palmas', '150501', 'A'),
-('Porfirio','León', 'Rivero','15728342', 'porfirio.leon@gmail.com', '942761039', '2 de Mayo', '150506', 'A'),
+('Teodoro','VelÃ¡zquez','Caballero', '72585674', 'teodoro.velazquez@gmail.com', '914739273', 'Las Palmas', '150501', 'A'),
+('Porfirio','LeÃ³n', 'Rivero','15728342', 'porfirio.leon@gmail.com', '942761039', '2 de Mayo', '150506', 'A'),
 ('Jordana','Blasco','Soteldo', '71382462', 'jordana.blasco@hotmail.com', '921056093', 'Caltopilla', '150507', 'A'),
 ('Soledad','Casanova','Gaya', '72639451', 'soledad.casanova@gmail.com', '972961350', 'Ramos Larrea', '150506', 'A');
 GO
@@ -273,25 +273,25 @@ INSERT INTO USUARIO
 VALUES
 
 ('Jhianpol','Ramos','945643535','73423424','jhianpol.ramos@vallegrande.edu.pe','Av Los Laureles','150516','A'),
-('Sofia Inés', 'Bolaños Velázquez', '910007822','07750457', 'sofia.bolaños@gmail.com', 'Jiron O Higgins', '150501', 'A'),
+('Sofia InÃ©s', 'BolaÃ±os VelÃ¡zquez', '910007822','07750457', 'sofia.bolaÃ±os@gmail.com', 'Jiron O Higgins', '150501', 'A'),
 ('Estefany Elisabeth', 'Romero Villa', '915647761', '25735046', 'estefany.romero@gmail.com', 'Santa Maria Alta', '150509', 'A'),
-('Juana Edelmira', 'Galván Pascual', '914575236', '21261108', 'juana.galván@gmail.com', 'Av 28 de Julio', '150506', 'A'),
+('Juana Edelmira', 'GalvÃ¡n Pascual', '914575236', '21261108', 'juana.galvÃ¡n@gmail.com', 'Av 28 de Julio', '150506', 'A'),
 ('Luciano Dafne', 'Rivera Campo', '915908420', '46967914', 'luciano.rivera@gmail.com', 'Av 2 de Mayo', '150506', 'A'),
-('Angela Estrella', 'Rodriguez León', '921367745', '07756532', 'angela.rodriguez@gmail.com', 'Cerro Libre', '150509', 'A'),
+('Angela Estrella', 'Rodriguez LeÃ³n', '921367745', '07756532', 'angela.rodriguez@gmail.com', 'Cerro Libre', '150509', 'A'),
 ('Rocio Jessica', 'Sotelo Lara', '916156023', '45055499', 'rocio.sotelo@gmail.com', 'Av Ayacucho', '150506', 'A'),
 ('Felix Renato', 'Cruz Santiago', '913881305', '06224656', 'felix.cruz@gmail.com', 'Cementerio', '150506', 'A'),
 ('Paul Donato', 'Ramos Roda', '925829547', '15448909', 'paul.ramos@gmail.com', 'Caltopilla', '150507', 'A'),
 ('Emma Rosario', 'Redondo Abascal', '923547549', '16458936', 'emma.redondo@gmail.com', 'Urb. Mariscal Ramon Castilla', '150513', 'A'),
-('Bruno Julio', 'Robles Saavedra', '917420895', '12569827', 'bruno.robles@gmail.com', 'Jirón Junín', '150511', 'A'),
-('Reina Manuela', 'Cáceres Tejada', '927672301', '12673920', 'reina.caceres@gmail.com', 'Carmen Alto', '150509', 'A'),
-('Valerio Isaías', 'Ojeda Cárdenas', '910588801', '22378967', 'valerio.ojeda@gmail.com', 'Nuevo imperial', '150509', 'A'),
+('Bruno Julio', 'Robles Saavedra', '917420895', '12569827', 'bruno.robles@gmail.com', 'JirÃ³n JunÃ­n', '150511', 'A'),
+('Reina Manuela', 'CÃ¡ceres Tejada', '927672301', '12673920', 'reina.caceres@gmail.com', 'Carmen Alto', '150509', 'A'),
+('Valerio IsaÃ­as', 'Ojeda CÃ¡rdenas', '910588801', '22378967', 'valerio.ojeda@gmail.com', 'Nuevo imperial', '150509', 'A'),
 ('Jenaro Bautista', 'Acosta Menendez', '923883907', '45678017', 'jenaro.acosta@gmail.com', 'C. Miraflores', '150501', 'A'),
-('Cristhian Paco', 'Gámez Rodriguez', '922156180', '76890278', 'cristhian.gamez@gmail.com', 'Los Leones', '150503', 'A'),
-('Agustín Manu', 'Carrillo Navarro', '921451567', '12799398', 'agustin.carrillo@gmail.com', 'Av. Arequipa', '150511', 'A'),
-('Jimena Ale', 'Delgado Montoya', '910244145', '13578997', 'jimena.delgado@gmail.com', 'Asunción 8', '150506', 'I'),
+('Cristhian Paco', 'GÃ¡mez Rodriguez', '922156180', '76890278', 'cristhian.gamez@gmail.com', 'Los Leones', '150503', 'A'),
+('AgustÃ­n Manu', 'Carrillo Navarro', '921451567', '12799398', 'agustin.carrillo@gmail.com', 'Av. Arequipa', '150511', 'A'),
+('Jimena Ale', 'Delgado Montoya', '910244145', '13578997', 'jimena.delgado@gmail.com', 'AsunciÃ³n 8', '150506', 'I'),
 ('Maxi Victor', 'Torres Quintanilla', '910411462', '79628176', 'maxi.torres@gmail.com', 'Calles los claveles', '150503', 'A'),
 ('Pedro Max', 'Quispe Avalos', '921381283', '76223469', 'pedro.quispe@gmail.com', 'Calle las Violetas', '150503', 'A'),
-('Xiomara Valentina', 'Brañes Torres', '912383824', '15467831', 'xiomara.brañes@vallegrande.edu.pe', 'Santa Maria Alta', '150509', 'A');
+('Xiomara Valentina', 'BraÃ±es Torres', '912383824', '15467831', 'xiomara.braÃ±es@vallegrande.edu.pe', 'Santa Maria Alta', '150509', 'A');
 GO
 
 -- Listar registro de USUARIO
@@ -310,7 +310,7 @@ VALUES
 ('7473423424','Leche Gloria','gloria@gmail.com','945456535','Gamarra','150101','A'),
 ('7446448444','Blanca Flor','Blanca.Flor@gmail.com','945747474','Gamarra','150101','A'),
 ('7783636424','La Calera','La.Calera@gmail.com','922222535','Exportacion','150101','A'),
-('7121423424','Costeño','Costeño@gmail.com','999922535','Gamarra','150101','A');
+('7121423424','CosteÃ±o','CosteÃ±o@gmail.com','999922535','Gamarra','150101','A');
 
 GO
 
@@ -329,9 +329,9 @@ VALUES
 ('Alfajores', 'Dulces de casa', '15.50','30','A'),
 ('Milonjas', 'Buen sabor y precio', '10.80','10','A'),
 ('Budin', 'Sabores de pasas de uva', '5.00','15','A'),
-('Pay', 'Sabores de maracuyá, limón, gelatina', '3.50','30','A'),
+('Pay', 'Sabores de maracuyÃ¡, limÃ³n, gelatina', '3.50','30','A'),
 ('Gelatinas', 'Elaborados en casa', '2.50','17','A'),
-('Mazamorras', 'Dulces para alegrar el día', '2.00','12','A');
+('Mazamorras', 'Dulces para alegrar el dÃ­a', '2.00','12','A');
 GO
 
 -- Listar registro de PRODUCTO
@@ -530,3 +530,5 @@ select * from vProducto
 --	INNER JOIN PRENDA AS P
 --	ON VD.IDPRE = P.IDPRE
 -- GO
+
+-- select * from CLIENTE
